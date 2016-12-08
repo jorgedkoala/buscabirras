@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <button ion-button  (click)="nuevocodigo()">+ Código</button>
+      <button ion-button (click)="mueve('4')"><<</button>
+      <button ion-button  (click)="mueve('2')">>></button>
+      <button ion-button (click)="mueve('1')">^</button>
+      <button ion-button (click)="mueve('3')">\\/</button>
+      <button ion-button (click)="avatar()">Perfil</button>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-scroll scrollX="true" scrollY="true" (pinch)="pinchEvent($event)" zoom="true">
+<div class="tablero">
+  <div class="celdas" *ngFor="let casilla of casillas; let i = index">
+    <div id="id{{i}}" [ngClass]="{'celdablanca':i % 2 == 0,'celdanegra':i % 2 != 0}" >
+      <div *ngIf="i == 24">
+      <img src="./assets/img/windrose.png"  width="100px">
+  </div>
+      <div *ngIf="regalosposicion.indexOf(i)>=0">
+      <img src="./assets/img/estrella.png"  width="100px">
+  </div>
+  </div>
+      <div [@mover]="movimiento" id="avatar"  *ngIf="i == posicion">
+          <img [src]="usoavatar"  width="100px">
+      </div>
+  </div>
+</div>
+  </ion-scroll>
+</ion-content>

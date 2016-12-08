@@ -1,0 +1,40 @@
+<!--
+  Generated template for the Avatar page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Selecciona tu personaje</ion-title>
+
+
+
+
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-slides #mySlider [options]="mySlideOptions">
+  <ion-slide>
+    <h2>nombre1</h2>
+    <img src="./assets/img/avatar1.jpg" (click)="setAvatar('avatar1.jpg')">
+  </ion-slide>
+  <ion-slide>
+    <h2>nombre2</h2>
+    <img src="./assets/img/avatar2.jpg" (click)="setAvatar('avatar2.jpg')">
+  </ion-slide>
+  <ion-slide>
+    <h2>nombre3</h2>
+    <img src="./assets/img/avatar3.jpg" (click)="setAvatar('avatar3.jpg')">
+  </ion-slide>
+  <ion-slide>
+    <h2>nombre4</h2>
+    <img src="./assets/img/avatar4.jpg" (click)="setAvatar('avatar4.jpg')">
+  </ion-slide>
+</ion-slides>
+</ion-content>
